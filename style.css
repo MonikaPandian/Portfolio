@@ -1,0 +1,14 @@
+.icons{
+    height:150px;
+    width:200px;
+    margin-bottom:60px;
+    margin-right:20px;
+    object-fit:contain;
+}
+
+.links{
+    height:40px;
+    width:40px;
+    margin-top: 20px;
+    margin-right:20px;
+}

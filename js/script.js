@@ -53,21 +53,18 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-// (function () {
-//     emailjs.init('GK9hUn4WxlbieGz0h');
-// })();
+document.getElementById("contact-form").addEventListener('submit', (event) => {
+    event.preventDefault();
+    var params = {
+        from_name: document.getElementById('name').value,
+        email_id: document.getElementById('email').value,
+        contact: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+    }
+    emailjs.send("service_whcehlk", "template_ftzryjn", params).then(function (res) {
+        alert("Email sent successfully");
+    }).catch(function (error) { alert('Email cannot be sent') })
+})
 
-// window.onload = function () {
-//     document.getElementById('contact-form').addEventListener('submit', function (event) {
-//         event.preventDefault();
-//         // generate a five digit number for the contact_number variable
-//         this.contact_number.value = Math.random() * 100000 | 0;
-//         // these IDs from the previous steps
-//         emailjs.sendForm('contact_service', 'contact_form', this)
-//             .then(function () {
-//                 console.log('SUCCESS!');
-//             }, function (error) {
-//                 console.log('FAILED...', error);
-//             });
-//     });
-// }
+
+

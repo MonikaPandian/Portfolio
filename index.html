@@ -26,22 +26,6 @@
             emailjs.init('GK9hUn4WxlbieGz0h');
         })();
     </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function () {
-                        console.log('SUCCESS!');
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
 </head>
 
 <body id="page-top">
@@ -265,6 +249,7 @@
                 <div class="col-lg-4 me-auto">
                     <form id="contact-form">
                         <!-- Name input-->
+                        <input type="hidden" name="contact_number">
                         <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..."
                                 data-sb-validations="required" />
@@ -319,7 +304,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/script.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>
